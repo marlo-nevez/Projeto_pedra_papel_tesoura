@@ -32,9 +32,7 @@
       //   const humanSelection = getHumanChoice(); const computerSelection = getcomputerChoice();
       function playRound(humanChoice, computerchoice) {
         if (
-          (humanChoice === "pedra" && computerchoice === "pedra") ||
-          (humanChoice === "tesoura" && computerchoice === "tesoura") ||
-          (humanChoice === "papel" && computerchoice === "papel")
+          (humanChoice === computerchoice)
         ) {
           console.log(`A escolha do computador foi: ${computerchoice}`);
           console.log(`A escolha do usuário foi: ${humanChoice}`);
