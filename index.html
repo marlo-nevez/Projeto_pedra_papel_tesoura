@@ -37,30 +37,30 @@
           (humanChoice === "papel" && computerchoice === "papel")
         ) {
           console.log(`A escolha do computador foi: ${computerchoice}`);
-          console.log(`A escolha do Usuario foi: ${humanChoice}`);
+          console.log(`A escolha do usuário foi: ${humanChoice}`);
           console.log("A partida empatou ninguem pontuou.");
           console.log("Placar:");
-          console.log(`Usuario: ${humanScore} | Computador: ${computerScore}`);
+          console.log(`Usuário: ${humanScore} | Computador: ${computerScore}`);
         } else if (
           (humanChoice === "pedra" && computerchoice === "tesoura") ||
           (humanChoice === "tesoura" && computerchoice === "papel") ||
           (humanChoice === "papel" && computerchoice === "pedra")
         ) {
           console.log(`A escolha do computador foi: ${computerchoice}`);
-          console.log(`A eschola do usuario foi: ${humanChoice}`);
-          console.log("O usuario pontuou");
+          console.log(`A escolha do usuário foi: ${humanChoice}`);
+          console.log("O usuário pontuou");
           humanScore += 1;
           console.log("Placar:");
-          console.log(`Usuario: ${humanScore} | Computador: ${computerScore}`);
+          console.log(`Usuário: ${humanScore} | Computador: ${computerScore}`);
           console.log("------------------------------------------");
           return;
         } else {
           console.log(`A escolha do computador foi: ${computerchoice}`);
-          console.log(`A escolha do usuario foi: ${humanChoice}`);
-          console.log("O Computador pontuou");
+          console.log(`A escolha do usuário foi: ${humanChoice}`);
+          console.log("O computador pontuou");
           computerScore += 1;
           console.log(
-            `Placar: Usuario: ${humanScore} | Computador: ${computerScore}`,
+            `Placar: Usuário: ${humanScore} | Computador: ${computerScore}`,
           );
           console.log("------------------------------------------");
 
@@ -79,11 +79,11 @@
           playRound(humanSelection, computerSelection);
         }
         if (humanScore > computerScore) {
-          return console.log("O usuario ganhou o jogo");
+          return console.log("O Usuário ganhou o jogo!");
         } else if (humanScore < computerScore) {
-          return console.log("O computador ganhou o jogo");
+          return console.log("O Computador ganhou o jogo!");
         } else {
-          return console.log("A partida empatou");
+          return console.log("A partida empatou!");
         }
       }
       playGame();
