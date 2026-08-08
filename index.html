@@ -3,10 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Melhor de trés</title>
   </head>
   <body>
     <script>
+      alert(
+        "Escolha entre pedra papel e tesoura e veja se você saira vitorioso ao final das trés partidas:",
+      );
+
       let computerchoice = Math.ceil(Math.random() * 3);
       function getcomputerChoice() {
         if (computerchoice === 3) {
@@ -19,20 +23,14 @@
       }
 
       function getHumanChoice() {
-        alert(
-          "Escolha entre pedra papel e tesoura selecionando pela númeração de cada um a seguir:",
-        );
-        let escolha = prompt("3° - Pedra | 2° Tesoura | 1° Papel");
+        let escolha = prompt("escholha: Pedra |  Tesoura | Papel");
         return (humanChoice = escolha.toLowerCase());
       }
 
       let humanScore = 0;
       let computerScore = 0;
-      const humanSelection = getHumanChoice();
-      const computerSelection = getcomputerChoice();
-
-      function playRound1(humanChoice, computerchoice) {
-        console.log("1° Rodada");
+      //   const humanSelection = getHumanChoice(); const computerSelection = getcomputerChoice();
+      function playRound(humanChoice, computerchoice) {
         if (
           (humanChoice === "pedra" && computerchoice === "pedra") ||
           (humanChoice === "tesoura" && computerchoice === "tesoura") ||
@@ -51,7 +49,7 @@
           console.log(`A escolha do computador foi: ${computerchoice}`);
           console.log(`A eschola do usuario foi: ${humanChoice}`);
           console.log("O usuario pontuou");
-          humanScore += 1
+          humanScore += 1;
           console.log("Placar:");
           console.log(`Usuario: ${humanScore} | Computador: ${computerScore}`);
           console.log("------------------------------------------");
@@ -71,7 +69,24 @@
         console.log("------------------------------------------");
       }
 
-      playRound1(humanSelection, computerSelection)
+      function playGame() {
+        for (let placar = 1; placar <= 3; placar++) {
+          console.log(`${placar}° rodada`);
+          let humanScore = 0;
+          let computerScore = 0;
+          const humanSelection = getHumanChoice();
+          const computerSelection = getcomputerChoice();
+          playRound(humanSelection, computerSelection);
+        }
+        if (humanScore > computerScore) {
+          return console.log("O usuario ganhou o jogo");
+        } else if (humanScore < computerScore) {
+          return console.log("O computador ganhou o jogo");
+        } else {
+          return console.log("A partida empatou");
+        }
+      }
+      playGame();
     </script>
   </body>
 </html>
