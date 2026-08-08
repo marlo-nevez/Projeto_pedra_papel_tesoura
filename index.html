@@ -22,8 +22,56 @@
         alert(
           "Escolha entre pedra papel e tesoura selecionando pela númeração de cada um a seguir:",
         );
-        let humanChoice = prompt("3° - Pedra | 2° Tesoura | 1° Papel");
+        let escolha = prompt("3° - Pedra | 2° Tesoura | 1° Papel");
+        return (humanChoice = escolha.toLowerCase());
       }
+
+      let humanScore = 0;
+      let computerScore = 0;
+      const humanSelection = getHumanChoice();
+      const computerSelection = getcomputerChoice();
+
+      function playRound1(humanChoice, computerchoice) {
+        console.log("1° Rodada");
+        if (
+          (humanChoice === "pedra" && computerchoice === "pedra") ||
+          (humanChoice === "tesoura" && computerchoice === "tesoura") ||
+          (humanChoice === "papel" && computerchoice === "papel")
+        ) {
+          console.log(`A escolha do computador foi: ${computerchoice}`);
+          console.log(`A escolha do Usuario foi: ${humanChoice}`);
+          console.log("A partida empatou ninguem pontuou.");
+          console.log("Placar:");
+          console.log(`Usuario: ${humanScore} | Computador: ${computerScore}`);
+        } else if (
+          (humanChoice === "pedra" && computerchoice === "tesoura") ||
+          (humanChoice === "tesoura" && computerchoice === "papel") ||
+          (humanChoice === "papel" && computerchoice === "pedra")
+        ) {
+          console.log(`A escolha do computador foi: ${computerchoice}`);
+          console.log(`A eschola do usuario foi: ${humanChoice}`);
+          console.log("O usuario pontuou");
+          humanScore += 1
+          console.log("Placar:");
+          console.log(`Usuario: ${humanScore} | Computador: ${computerScore}`);
+          console.log("------------------------------------------");
+          return;
+        } else {
+          console.log(`A escolha do computador foi: ${computerchoice}`);
+          console.log(`A escolha do usuario foi: ${humanChoice}`);
+          console.log("O Computador pontuou");
+          computerScore += 1;
+          console.log(
+            `Placar: Usuario: ${humanScore} | Computador: ${computerScore}`,
+          );
+          console.log("------------------------------------------");
+
+          return;
+        }
+        console.log("------------------------------------------");
+      }
+
+      playRound1(humanSelection, computerSelection)
     </script>
   </body>
 </html>
