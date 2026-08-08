@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let computerchoice = Math.ceil(Math.random() * 3);
+      function getcomputerChoice() {
+        if (computerchoice === 3) {
+          return (computerchoice = "pedra");
+        } else if (computerchoice === 2) {
+          return (computerchoice = "tesoura");
+        } else {
+          return (computerchoice = "papel");
+        }
+      }
+    </script>
+  </body>
+</html>
